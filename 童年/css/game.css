@@ -1,0 +1,228 @@
+@charset "utf-8";
+body {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	-webkit-user-select: none;
+	/*定义增量*/
+	counter-reset: birds;
+}
+
+.wrapper {
+	position: relative;
+	height: 500px;
+	background: -webkit-linear-gradient(top, #ded48d, #fff);
+}
+
+.bird {
+	opacity: 0;
+	cursor: crosshair;
+	display: block;
+	width: 15px;
+	height: 15px;
+	background-color: #000;
+	position: absolute;
+	/*left: 50%;
+	top: 50%;*/
+	border-radius: 50% 50% 20% 20%;
+	animation: planeo .8s linear infinite;
+	/*animation: move 5s linear infinite;*/
+}
+
+.bird1 {
+	left: 100px;
+	top: 30px;
+	transform: scale(3.9);
+	animation-delay: -91s !important;
+}
+
+.bird2 {
+	left: 500px;
+	top: 130px;
+	transform: scale(2.3);
+	animation-delay: -3s !important;
+}
+
+.bird3 {
+	left: 400px;
+	top: 230px;
+	transform: scale(1.6);
+	animation-delay: -5s !important;
+}
+
+.bird4 {
+	top: 330px;
+	transform: scale(1.4);
+	animation-delay: -7s !important;
+}
+
+.bird5 {
+	top: 630px;
+	transform: scale(.6);
+	animation-delay: -29s !important;
+}
+
+.bird6 {
+	top: 530px;
+	transform: scale(1);
+	animation-delay: -11s !important;
+}
+
+.bird7 {
+	top: 80px;
+	transform: scale(1.3);
+	animation-delay: -13s !important;
+}
+
+.bird8 {
+	top: 250px;
+	transform: scale(1.1);
+	animation-delay: -8s !important;
+}
+
+.bird:before,
+.bird:after {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	content: "";
+}
+
+.bird:before {
+	width: 6px;
+	height: 6px;
+	background-color: #ef8957;
+	display: block;
+	border-radius: 100% 0% 20% 0%;
+	transform: rotate(45deg);
+	margin-left: -3px;
+	margin-top: -2px;
+}
+
+.bird:after {
+	width: 100px;
+	height: 100px;
+	/*background-color: #000000;*/
+	border-radius: 50%;
+	box-shadow: inset 0 5px 0 #000;
+	margin-left: -50px;
+	margin-top: -7px;
+	/*运动基点*/
+	transform-origin: 100% 0;
+	animation: alas 3s linear infinite;
+}
+
+
+/*射中之后消失*/
+.input_anima {
+				display: none;
+			}
+.input_anima~ .bird {
+	opacity: 0;
+}
+
+.input_anima~ .bird {
+	animation: move 5s linear infinite;
+	transition: .3s cubic-bezier(0, .45, 1, 0);
+}
+
+.input_anima1:not(:checked)~ .bird1,
+.input_anima2:not(:checked)~ .bird2,
+.input_anima3:not(:checked)~ .bird3,
+.input_anima4:not(:checked)~ .bird4,
+.input_anima5:not(:checked)~ .bird5,
+.input_anima6:not(:checked)~ .bird6,
+.input_anima7:not(:checked)~ .bird7,
+.input_anima8:not(:checked)~ .bird8 {
+	opacity: 1;
+}
+
+.input_anima1:checked~ .bird1 span,
+.input_anima2:checked~ .bird2 span,
+.input_anima3:checked~ .bird3 span,
+.input_anima4:checked~ .bird4 span,
+.input_anima5:checked~ .bird5 span,
+.input_anima6:checked~ .bird6 span,
+.input_anima7:checked~ .bird7 span,
+.input_anima8:checked~ .bird8 span {
+	display: block;
+}
+
+/*计分*/
+.sum:after{
+	content: counter(birds);
+	
+}
+.input_anima:checked{
+	counter-increment: birds;
+}
+
+
+.bird span {
+				display: none;
+				position: absolute;
+				left: 60%;
+				top: -40%;
+				width: 30px;
+				height: 20px;
+				border-radius: 50%;
+				background: #EF8957;
+				border: 1px solid red;
+				padding-left: 10px;
+			}
+			
+			.bird span:before {
+				content: "TT~";
+				font-size: 1px;
+				transform: scale(.1);
+			}
+			
+
+/*定义翅膀动画*/
+
+@keyframes alas {
+	50% {
+		transform: rotateX(-1440deg);
+	}
+}
+
+
+/*定义鸟儿停留时起伏的动画*/
+
+@-webkit-keyframes planeo {
+	40% {
+		transform: rotateZ(-2deg) translateX(2px) translateY(15px) translateZ(0px);
+	}
+	80% {
+		transform: rotateZ(2deg) translateX(5px) translateY(10px) translateZ(0px);
+	}
+}
+
+
+/*定义鸟儿移动式的动画*/
+
+@-webkit-keyframes move {
+	0% {
+		left: 0%;
+	}
+	20% {
+		top: 50%;
+		left: 20%;
+	}
+	40% {
+		top: 30%;
+		left: 60%;
+	}
+	60% {
+		top: 80%;
+		left: 80%;
+	}
+	80% {
+		top: 10%;
+		left: 20%;
+	}
+	100% {
+		top: 30%;
+		left: 20%;
+	}
+}

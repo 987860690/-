@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>校园风光</title>
+    <style type="text/css">
+        #camp {
+            position: absolute;
+            width: 700px;
+            height: auto;
+            left: 200px;
+            border: 1px solid red;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 20px
+        }
+        #photo {
+            border: 1px dashed red;
+            height: 440px;
+            
+            position: relative
+        }
+        #photo img {
+            width: 600px;
+            height: 400px;
+            display: block;
+            float: left;
+            position: absolute;
+            left: 50px;
+            display: none;
+            border-radius: 50px;
+            border: 4px solid #d7d9de;
+        }
+        #photo img:first-child {
+            display: block;
+        }
+        #photo #choose {
+            position: absolute;
+            top: 410px;
+            left: 400px;
+            width: 230px;
+            height: 22px;
+            background: #b2aaaa;
+        }
+        #photo #choose a {
+            display: block;
+            width: 20px;
+            height: 20px;
+            margin-left: 20px;
+            float: left;
+            border: 1px dotted red;
+            text-align: center;
+            vertical-align: middle;
+        }
+        #limage {
+            position: absolute;
+            top: 200px;
+            left: 100px;
+        }
+        #rimage {
+            position: absolute;
+            top: 200px;
+            right: 100px;
+        }
+        #schoolshow {
+            width: 700px;
+            height: 200px;
+            border: 1px solid blue;
+        }
+        #schoolshow div {
+            width: 200px;
+            height: 160px;
+            float: left;
+            margin-left: 25px;
+            border: 1px dotted blue;
+            margin-top: 20px;
+        }
+        #schoolshow div h4 {
+            padding-left: 15px;
+            width: 185px;
+            background-color: dodgerblue;
+            height: 25px;
+            margin-top: 0px;
+            display: block;
+            padding-top: 10px;
+        }
+        #schoolshow div ul li {
+            line-height: 24px;
+            list-style: circle;
+        }
+        #schoolshow div ul li a {
+            text-decoration: none;
+            color: black;
+            font-family: "STKaiti";
+        }
+    </style>
+</head>
+
+<body>
+    <div id="camp">
+        <div id="photo">
+            <div id="image">
+                <img src="images/mingdehu.jpg" alt="#" id="img1">
+                <img src="images/wuxingmen.jpg" alt="##" id="img2">
+                <img src="images/zoulang.jpg" alt="##" id="img3">
+                <img src=" " alt="#" id="img4">
+                <img src=" " alt="#" id="img5">
+            </div>
+
+            <div id="choose">
+                <a>1</a>
+                <a>2</a>
+                <a>3</a>
+                <a>4</a>
+                <a>5</a>
+            </div>
+        </div>
+        <div id="lr">
+            <img id="limage" src="images/left183.png" alt="左箭头" width="30" height="40">
+            <img id="rimage" src="images/right186.png" alt="右箭头" width="30" height="40">
+        </div>
+        <div id="schoolshow">
+            <div id="show1">
+                <h4>校园视频</h4>
+                <ul id="ul1">
+
+                    <li>
+                        <a href="">安工版-南山南</a>
+                    </li>
+                    <li>
+                        <a href=""></a>
+                    </li>
+                    <li>
+                        <a href=""></a>
+                    </li>
+                    <li>
+                        <a href=""></a>
+                    </li>
+                </ul>
+            </div>
+            <div id="show2">
+                <h4>校园动态</h4>
+                <ul id="ul2">
+                    <li>
+                        <a href=""></a>
+                    </li>
+                    <li>
+                        <a href=""></a>
+                    </li>
+                    <li>
+                        <a href=""></a>
+                    </li>
+                    <li>
+                        <a href=""></a>
+                    </li>
+                </ul>
+            </div>
+            <div id="show3">
+                <h4>快速链接</h4>
+                <ul id="ul3">
+                    <li>
+                        <a href="http://tsg.ayit.edu.cn/">图书馆</a>
+                    </li>
+                    <li>
+                        <a href="http://jwgl.ayit.edu.cn/">教务网</a>
+                    </li>
+                    <li>
+                        <a href="http://www.s18.cn/Bus/Anyang/1590013.htm">公交路线</a>
+                    </li>
+                    <li>
+                        <a href="http://map.baidu.com/?c=12730048.582141,4285165.038844&s=nb%26gr_radius%3D5000%26c%3D267%26wd%3D%25E5%25AE%2589%25E9%2598%25B3%25E5%25B7%25A5%25E5%25AD%25A6%25E9%2599%25A2%25E5%2591%25A8%25E8%25BE%25B9%26nb_x%3D12730048.582141%26nb_y%3D4285165.038844&from=alamap&tpl=mapdots">学校周边</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    var Photo = document.getElementById('image');
+    var Image = Photo.getElementsByTagName('img');
+    
+
+    var Tab = document.getElementById('choose').getElementsByTagName('a');
+    for (var i = 0; i < Tab.length; i++) {
+        Tab[i].index = i;
+        Tab[i].onclick = function () {
+
+            for (var j = 0; j < Image.length; j++) {
+                Image[j].style.display = "none";
+
+            }
+            Image[this.index].style.display = "block";
+        }
+    }
+    
+    
+</script>
+
+</html>

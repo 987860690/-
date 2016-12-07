@@ -1,0 +1,118 @@
+
+#main {
+
+    position: relative;
+
+    width: 88%;
+
+    height: 720px;
+
+    float: right;
+
+    margin-top: 0px;
+
+    background-color: beige;
+
+}
+.table_0{width: 900px;}
+
+.table_0 tr td {
+
+    border-collapse: inherit;
+
+    border: 1px solid black;
+
+    height: 40px
+
+}
+
+.td_1 {
+
+    width: 150px;
+
+    text-align: center
+
+}
+
+.td_2 {
+
+    width: 80px;
+
+    text-align: left;
+
+}
+
+.td_3 {
+
+    width: 30px;
+
+}
+
+.td_money {
+
+    width: 450px;
+
+}
+
+#home {
+
+    width: 450px;
+
+    height: 30px;
+
+    background-color: rgba(235, 235, 229, 0.13);
+
+    color: black;
+
+    font-size: 14px;
+
+}
+
+#tel {
+
+    width: 450px;
+
+    height: 30px;
+
+    background-color: rgba(235, 235, 229, 0.13);
+
+    color: black;
+
+    font-size: 14px;
+
+}
+
+#zipcode {
+
+    height: 30px;
+
+    background-color: rgba(235, 235, 229, 0.13);
+
+    color: black;
+
+    font-size: 14px;
+
+}
+
+#grennway {
+
+    width: 20px;
+
+    height: 20px;
+
+}
+
+#submit {
+
+    text-align: center;
+
+    width: 100px;
+
+    height: 30px;
+
+    margin-left: 400px;
+
+    font-size: 16px
+
+}
+.beizhu{margin-left: 150px;}

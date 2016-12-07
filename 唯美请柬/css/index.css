@@ -1,0 +1,60 @@
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+#music {
+	/*background-color: black;*/
+	/*border: 1px solid #060404;*/
+	opacity: .3;
+	position: fixed;
+	right: 20px;
+	top: 20px;
+	border-radius: 50%;
+}
+
+#music .music_1 {
+	width: 44px;
+	height: 44px;
+	background-image: url(../img/musical.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#music .music_1.music_disc {
+	/*transform: rotate();*/
+	-webkit-animation: music_disc 4s linear infinite;
+	-moz-animation: music_disc 4s linear infinite;
+	-ms-animation: music_disc 4s linear infinite;
+}
+
+@-moz-keyframes music_disc {
+	0% {
+		-moz-transform: rotate(0deg);
+	}
+	100% {
+		-moz-transform: rotate(360deg);
+	}
+}
+
+@-webkit-keyframes music_disc {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@-ms-keyframes music_disc {
+	0% {
+		-ms-transform: rotate(0deg);
+	}
+	100% {
+		-ms-transform: rotate(360deg);
+	}
+}
