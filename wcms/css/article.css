@@ -1,0 +1,105 @@
+@charset "utf-8";
+3#artContent p {
+	/*设置缩进*/
+	text-indent: 2em;
+	font: normal 15px "微软雅黑";
+}
+
+#artContent p {
+	/*设置正文对齐方式为两端对齐*/
+	text-align: justify;
+	text-justify: distribute-all-lines;
+	/*ie6~8*/
+	text-align-last: justify;
+	/*ie9*/
+	-webkit-text-align-last: justify;
+	-moz-text-align-last: justify;
+}
+
+
+/*定义最后一条用户评论信息*/
+
+.comment {
+	margin: 0;
+	padding: 12px;
+}
+
+.comment .media {
+	border-bottom: 1px #428BCA dotted;
+}
+
+.comment img {
+	padding: 3px;
+}
+
+.comment .media {
+	height: 118px;
+}
+
+.comment .media .pull-left {
+	width: 20%;
+}
+
+.comment .media_last {
+	margin-top: 15px;
+	border-bottom: none;
+}
+
+.comment .media_last .pull-left {
+	padding-right: 10px;
+	width: 20%;
+}
+
+.comment .media-body .media {
+	padding: 10px;
+	border-top: 1px #428BCA dotted;
+	border-bottom: none;
+}
+
+#editor {
+	height: 134px;
+	margin-top: 5px;
+}
+
+.pinglun {
+	margin-top: 5px;
+}
+
+.cd-top {
+	display: inline-block;
+	height: 60px;
+	width: 60px;
+	position: fixed;
+	bottom: 40px;
+	right: 35px;
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+	background: #428BCA url(../img/TOP.png)no-repeat center 50%;
+	/*visibility: visible;*/
+	visibility: hidden;
+	opacity: 0;
+	/*opacity: 1;*/
+	transition: all .3s;
+	/*color: blue;*/
+}
+
+.cd-top .cd-is-visible {
+	visibility: visible;
+	opacity: 1;
+}
+
+.cd-top.cd-fade-out {
+	opacity: .8;
+}
+
+.no-touch .cd-top:hover {
+	background-color: #e86256;
+}
+
+/*侧栏分享面板*/
+.sscrollsidebar{
+	position: absolute;
+	z-index: 999;
+	top: 200px;
+}

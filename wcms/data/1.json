@@ -1,0 +1,17 @@
+[{
+	"id":1,"text":"学校概况","url":"","status":"可用",
+	"children":[{"id":1,"text":"管理員基本信息","url":"jibenxinxi/guanliyuan.html","status":"可用"},
+	            {"id":1,"text":"学校概况","url":"","status":"可用"},
+	            {"id":1,"text":"学校概况","url":"","status":"可用"}]
+},{
+	"id":1,"text":"学校概况","url":"","status":"可用",
+	"children":[{"id":1,"text":"管理員基本信息","url":"jibenxinxi/guanliyuan.html","status":"可用"},
+	            {"id":1,"text":"学校概况","url":"","status":"可用"},
+	            {"id":1,"text":"学校概况","url":"","status":"可用"}]
+},{
+	"id":1,"text":"学校概况","url":"","status":"可用",
+	"children":[{"id":1,"text":"管理員基本信息","url":"jibenxinxi/guanliyuan.html","status":"可用"},
+	            {"id":1,"text":"学校概况","url":"","status":"可用"},
+	            {"id":1,"text":"学校概况","url":"","status":"可用"}]
+}
+]

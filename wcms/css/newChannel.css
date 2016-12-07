@@ -1,0 +1,85 @@
+@charset "utf-8";
+.new_logo {
+	margin-top: 54px;
+}
+
+
+/*让‘通知公告’标题与列表在一行，并将显示高度设置为一行*/
+
+.scorllNotice {
+	position: relative;
+	height: 30px;
+	overflow: hidden;
+	background: #FFFFFF;
+	border: 1px solid #428bca;
+	border-radius: 5px;
+	padding: 5px;
+	padding-left: 90px;
+}
+
+.scorllNotice ul,
+.scorllNotice ul li {
+	margin: 0;
+	;
+	padding: 0;
+	list-style: none;
+}
+
+.scorllNotice ul li a {
+	text-decoration: none;
+	font: bold 15px "微软雅黑";
+	color: #555555;
+}
+
+.scorllNotice #noticeTip {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 40px;
+	color: #FFFFFF;
+	font: bold 15px "微软雅黑";
+	background: #428BCA;
+	padding: 5px;
+}
+
+.news_pic {
+	margin-top: 10px;
+}
+
+.page_num {
+	text-align: center;
+}
+
+.badge {
+	width: 10%;
+	/*line-height: 14px;*/
+	vertical-align: middle;
+}
+
+#hotNews .badgetop3 {
+	background-color: #C22222;
+}
+
+.list-group-item a{
+	text-decoration: none;
+}
+
+/*用css实现说明文字的隐藏*/
+
+#ulPEPlatForm .list-group-item {
+	padding: 28px 10px;
+}
+
+#ulPEPlatForm #divPicText {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 0px;
+	overflow: hidden;
+	background: #FFFFFF;
+	color: #428BCA;
+	font: 14px "微软雅黑";
+	text-overflow: ellipsis;
+	line-height: 24px;
+	
+}

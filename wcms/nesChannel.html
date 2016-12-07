@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<title></title>
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+		<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+		<!--导入CKPlayer视频播放器插件javascrip文件-->
+		<!--<script type="text/javascript" src="ckplayer6.8/ckplayer/ckplayer.js"></script>-->
+
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="css/new_file.css" />
+		<link rel="stylesheet" href="css/newChannel.css" />
+		<!--<script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>-->
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+		<script>
+			$(function() {
+				var settime;
+				$('.scorllNotice').hover(function() {
+						clearInterval(settime);
+					}, function() {
+						settime = setInterval(function() {
+							//选取div下的第一个ul
+							var $first = $('.scorllNotice ul:first');
+							//获取第一个li的高度，为ul想上移动做准备
+							var height = $first.find('li:first').height();
+							$first.animate({
+								"marginTop": -height + "px"
+							}, 600, function() {
+								$first.css({
+									marginTop: 0
+								}).find('li:first').appendTo($first); //设置上边距为0，为下一次移动做准备
+							});
+						}, 3000);
+					}).trigger('mouseleave') //trigger（）方法的作用是触发被选元素的特定事件类型
+			})
+
+			//精彩评论区 手风琴效果
+			//			$('.collapse_a').collapse({
+			//				parent:'#accordioon',
+			//				toggle:true
+			//			})
+
+			//实现说明文字显示、隐藏动画效果
+			$(function() {
+				$('#ulPEPlatForm .list-group-item').hover(function() {
+					$(this).find('#divPicText').stop().animate({
+						"height": 80
+					})
+				}, function() {
+					$(this).find('#divPicText').stop().animate({
+						"height": 0
+					})
+				})
+			})
+		</script>
+	</head>
+
+	<body>
+		<!--顶部固定导航条-->
+		<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+			<div class="container" style="color: #fff;">
+				<ul class="nav navbar-nav navbar-left">
+					<li>
+						<a href="#"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;设为首页</a>
+					</li>
+					<li>
+						<a href="#"><span class="glyphicon glyphicon-star"></span>&nbsp;&nbsp;收藏本站</a>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="#" data-toggle="modal" data-target="#userLoginModal">
+							<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;登录</a>
+					</li>
+					<li>
+						<a href="#" data-toggle="modal" data-target="#userRegisterModal">
+							<span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;注册</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<!--Logo与站内搜索框-->
+		<div class="container new_logo">
+			<div class="row">
+				<div class="col-sm-5 col-xl-12">
+					<img src="img/cp.png" alt="计算机信息与工程学院" class="img-responsive" />
+				</div>
+				<div class="col-sm-7 col-xs-12" style="padding:2.5% 0">
+					<form action="#" id="frmSearch">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="请输入关键字进行站内检索" />
+							<span class="input-group-btn">
+								<input type="submit" class="btn btn-default" value="搜索" />
+							</span>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!--导航条-->
+		<div class="navbar navbar-default" role="navigation">
+			<div class="container">
+				<ul class="nav navbar-nav" role="tablist">
+					<li>
+						<a href="#">首&nbsp;页</a>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							学院概况<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="#">学院简介</a>
+							</li>
+							<li>
+								<a href="#">学院领导</a>
+							</li>
+							<li>
+								<a href="#">组织结构</a>
+							</li>
+							<li>
+								<a href="#">专业设置</a>
+							</li>
+							<li>
+								<a href="#">师资力量</a>
+							</li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							教育教学<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="#">教学动态</a>
+							</li>
+							<li>
+								<a href="#">国家平台</a>
+							</li>
+							<li>
+								<a href="#">实践教学</a>
+							</li>
+							<li>
+								<a href="#">校企合作</a>
+							</li>
+							<li>
+								<a href="#">教研教改</a>
+							</li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							科学研究<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="#">通知公告</a>
+							</li>
+							<li>
+								<a href="#">学术动态</a>
+							</li>
+							<li>
+								<a href="#">学科建设</a>
+							</li>
+							<li>
+								<a href="#">科研课题</a>
+							</li>
+							<li>
+								<a href="#">科研成果</a>
+							</li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							学生工作<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="#">学生管理</a>
+							</li>
+							<li>
+								<a href="#">学生风采</a>
+							</li>
+							<li>
+								<a href="#">校园文化</a>
+							</li>
+							<li>
+								<a href="#">素质教育</a>
+							</li>
+							<li>
+								<a href="#">校友之家</a>
+							</li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							招生就业<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="#">专业介绍</a>
+							</li>
+							<li>
+								<a href="#">招生信息</a>
+							</li>
+							<li>
+								<a href="#">就业信息</a>
+							</li>
+
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#">专业介绍</a>
+					</li>
+					<li class="dropdown">
+						<a href="#">党群工作</a>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							院务公开<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="#">通知公告</a>
+							</li>
+							<li>
+								<a href="#">新闻资讯</a>
+							</li>
+							<li>
+								<a href="#">电子院报</a>
+							</li>
+							<li>
+								<a href="#">人才引进</a>
+							</li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#">关工委</a>
+					</li>
+					<li class="dropdown">
+						<a href="#">新闻资讯</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--主体内容-->
+		<div class="container">
+			<div class="row">
+				<!--左边内容-->
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<div class="scorllNotice">
+							<div id="noticeTip">通知公告</div>
+							<ul>
+								<li>
+									<a href="#">
+										<span class="glyphicon glyphicon-volume-up"></span>&nbsp;&nbsp;关于14级软件工程毕业答辩的时间安排
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="glyphicon glyphicon-volume-up"></span>&nbsp;&nbsp;关于14级软件工程奖学金名单的通知
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="glyphicon glyphicon-volume-up"></span>&nbsp;&nbsp;关于14级软件工程毕业答辩的时间安排
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="glyphicon glyphicon-volume-up"></span>&nbsp;&nbsp;关于14级软件工程奖学金名单的通知
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 news_pic">
+						<!--<p>图文新闻或者文字新闻</p>-->
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<h3 class="panel-title">
+									<span class="glyphicon glyphicon-hand-right"></span>&nbsp;&nbsp;当前位置：新闻资讯
+								</h3>
+							</div>
+							<div class="panel-body">
+								<div class="media">
+									<a href="#" class="pull-left">
+										<img src="img/pic2.jpg" class="media-object img-thumbnail img-responsive" alt=".." />
+									</a>
+									<div class="media-body">
+										<h4 class="media-heading">
+												<a href="#">时光掠影</a><br/>
+												&nbsp;&nbsp;<p>明明还没有努力过，有什么脸皮失落自卑！</p>
+												<p>其实就在眼前，明明就在伸手可及的地方，但那距离却总让人觉得像是永远。</p>
+												<p>要抹去懊悔，终究只有继续不断努力。</p>
+												<p>我发现了，无聊的不是这段时光，而是和别人相似的自己.</p>
+												
+											</h4>
+									</div>
+								</div>
+								<div class="media">
+									<a href="#" class="pull-left">
+										<img src="img/pic4.jpg" class="media-object img-thumbnail img-responsive" alt=".." />
+									</a>
+									<div class="media-body">
+										<h4 class="media-heading">
+												<a href="#">懵懂的时光</a><br/>
+													&nbsp;&nbsp;<p>在转身离开的时候，那么空荡荡的，感受地到阵阵寒风来袭。</p>
+													<p>你不会懂，那些阳光里细微的疼痛。</p>
+													<p>流年染指了悲伤，划破了那年唯美脸庞。</p>
+													<p>时光晕染开寂寞带走了曾经纯真的笑容。</p>
+											
+											</h4>
+									</div>
+								</div>
+								<div class="media">
+									<a href="#" class="pull-left">
+										<img src="img/pic2.jpg" class="media-object img-thumbnail img-responsive" alt=".." />
+									</a>
+									<div class="media-body">
+										<h4 class="media-heading">
+												<a href="#">时光掠影</a><br/>
+												&nbsp;&nbsp;<p>明明还没有努力过，有什么脸皮失落自卑！</p>
+												<p>其实就在眼前，明明就在伸手可及的地方，但那距离却总让人觉得像是永远。</p>
+												<p>要抹去懊悔，终究只有继续不断努力。</p>
+												<p>我发现了，无聊的不是这段时光，而是和别人相似的自己.</p>
+												
+											</h4>
+									</div>
+								</div>
+							</div>
+							<!--<p>分页位置</p>-->
+							<div class="panel-footer page_num">
+								<ul class="pagination">
+									<li>
+										<a href="#">首页</a>
+									</li>
+									<li>
+										<a href="#">上一页</a>
+									</li>
+									<li>
+										<a href="#">1</a>
+									</li>
+									<li>
+										<a href="#">2</a>
+									</li>
+									<li>
+										<a href="#">3</a>
+									</li>
+									<li>
+										<a href="#">4</a>
+									</li>
+									<li>
+										<a href="#">5</a>
+									</li>
+									<li>
+										<a href="#">下一页</a>
+									</li>
+									<li>
+										<a href="#">尾页</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--右边内容-->
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="panel panel-primary" id="hotNews">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<span class="glyphicon glyphicon-hand-right"></span>&nbsp;&nbsp;最热新闻
+									</h4>
+								</div>
+								<ul class="list-group">
+									<a href="#" target="_blank" class="list-group-item">
+										<span class="badge pull-left badgetop3">1</span>&nbsp;&nbsp;最热新闻标题
+									</a>
+									<a href="#" target="_blank" class="list-group-item">
+										<span class="badge pull-left badgetop3">2</span>&nbsp;&nbsp;最热新闻标题
+									</a>
+									<a href="#" target="_blank" class="list-group-item">
+										<span class="badge pull-left badgetop3">3</span>&nbsp;&nbsp;最热新闻标题
+									</a>
+									<a href="#" target="_blank" class="list-group-item">
+										<span class="badge pull-left ">4</span>&nbsp;&nbsp;最热新闻标题
+									</a>
+									<a href="#" target="_blank" class="list-group-item">
+										<span class="badge pull-left ">5</span>&nbsp;&nbsp;最热新闻标题
+									</a>
+									<a href="#" target="_blank" class="list-group-item">
+										<span class="badge pull-left ">6</span>&nbsp;&nbsp;最热新闻标题
+									</a>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<!--精彩评论存放位置-->
+							<div class="panel panel-primary">
+								<div class="panel-heading">
+									<h3 class="panel-title">
+										<a href="#" class="pull-right">更多...</a>
+										<span class="fa fa-thumbs-o-up"></span>&nbsp;&nbsp;精彩评论
+									</h3>
+								</div>
+								<!--使用bootstrap折叠面板实现精彩品论内容-->
+								<div class="panel-group" id="accordion">
+									<!--<div class="panel">
+										<a data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne" class="list-group-item" >
+											原文：诺贝尔奖获得者罗伊·格劳伯教授来我院讲学
+										</a>
+										<div class="panel-collapse collapse in" id="collaspeOne">
+											<div class="panel-body">
+												<a class="list-group-item">
+													<span class="fa fa-comment"></span>&nbsp;精彩评论...
+												</a>
+												<a class="list-group-item">
+													<span class="fa fa-comment"></span>&nbsp;精彩评论...
+												</a>
+											</div>
+										</div>
+									</div>
+									-->
+									<div class="panel">
+										<a class="collapsed list-group-item" data-target="#collaspeOne" data-toggle="collapse">原文：诺贝尔奖获得者罗伊·格劳伯教授来我院讲学</a>
+										<div class="panel-collapse collapse in" id="collaspeOne">
+											<div class="panel-body">
+												<a class="list-group-item">
+													<span class="fa fa-comment"></span>&nbsp;精彩评论...
+												</a>
+												<a class="list-group-item">
+													<span class="fa fa-comment"></span>&nbsp;精彩评论...
+												</a>
+											</div>
+										</div>
+
+									</div>
+									<div class="panel">
+										<a class="collapsed list-group-item" data-target="#collaspeTwo" data-toggle="collapse">原文：诺贝尔奖获得者罗伊·格劳伯教授来我院讲学</a>
+										<div class="panel-collapse collapse" id="collaspeTwo">
+											<div class="panel-body">
+												<a class="list-group-item">
+													<span class="fa fa-comment"></span>&nbsp;精彩评论...
+												</a>
+												<a class="list-group-item">
+													<span class="fa fa-comment"></span>&nbsp;精彩评论...
+												</a>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<!--专业教育平台存放位置-->
+							<div class="panel panel-primary">
+								<div class="panel-heading">
+									<h3 class="panel-title">
+										<span class="glyphicon glyphicon-road"></span>&nbsp;&nbsp;专业教育平台
+									</h3>
+								</div>
+								<div class="panel-body">
+									<!--使用bootstrap网络系统和jQuery实现专业教育平台内容 -->
+									<ul class="list-group" id="ulPEPlatForm">
+										<li class="list-group-item">
+											<a href="#" target="_blank">
+												<span class="fa fa-mortar-board fa-2x pull-left"></span> 国家工程实践教育中心云教育平台
+											</a>
+											<div id="divPicText">
+												<p>&nbsp;&nbsp;国家工程实践教育中心云教育平台国家工程实践教育中心云教育平台国家工程实践教育中心云教育平台</p>
+											</div>
+										</li>
+										<li class="list-group-item">
+											<a href="#" target="_blank">
+												<span class="fa fa-mortar-board fa-2x pull-left"></span> 国家工程实践教育中心云教育平台
+											</a>
+											<div id="divPicText">
+												<p>&nbsp;&nbsp;国家工程实践教育中心云教育平台国家工程实践教育中心云教育平台国家工程实践教育中心云教育平台</p>
+											</div>
+										</li>
+										
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--底部版权信息-->
+		<div class="container">
+			<div class="footer">
+				<div class="container container_footer">
+					<center class="container_footer_txt">
+						<h2>计算机信息与工程学院</h2>
+						<p>0774-8358630 | 0774-8358630<br/>
+							<a href="#">9878@163.com</a>
+						</p>
+					</center>
+				</div>
+			</div>
+		</div>
+
+		<!--用户登录-->
+		<div class="modal fade" id="userLoginModal" role="dialog">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<form class="form-horizontal" role="form" id="frmUserLogin">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title">
+								<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;用户登录
+							</h4>
+						</div>
+						<div class="modal-body">
+							<p><input type="text" class="form-control" placeholder="用户名/手机号/邮箱账号"></p>
+							<p><input type="password" class="form-control" placeholder="请输入密码"></p>
+							<p><label class="checkbox-inline">
+								<input type="checkbox" />十天免登陆
+								</label>
+							</p>
+						</div>
+						<div class="modal-footer">
+							<input type="button" class="btn btn-success" value="登&nbsp;录" />
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!--用户注册-->
+		<div class="modal fade" id="userRegisterModal" role="dialog" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<input type="button" value="&times;" class="close" data-dismiss="modal" aria-hidden="true">
+						<h4 class="modal-title">
+							<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;用户注册
+						</h4>
+						<div class="modal-body">
+							<div class="row">
+								<div class="userRegisterText">用户名</div>
+								<div class="userRegisterInput">
+									<input type="text" class="form-control" name="username" />
+									<p class="userRegisterNotice">6~18个字符，可使用字母，数字，下划线</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="userRegisterText">密码</div>
+								<div class="userRegisterInput">
+									<input type="password" class="form-control" name="username" />
+									<p class="userRegisterNotice">6~16个字符，区分大小写</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="userRegisterText">确认密码</div>
+								<div class="userRegisterInput">
+									<input type="password" class="form-control" name="username" />
+									<p class="userRegisterNotice">请再次填写密码</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="userRegisterText">电子邮箱</div>
+								<div class="userRegisterInput">
+									<input type="email" class="form-control" name="username" />
+									<p class="userRegisterNotice">Email格式：lrn@163.com</p>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<input type="submit" class="btn btn-success" value="立即注册" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>

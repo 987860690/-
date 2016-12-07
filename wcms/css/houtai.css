@@ -1,0 +1,17 @@
+@charset "utf-8";
+#frmLogin .input-group{
+	margin-bottom: 40px;
+}
+/*设置表单文字*/
+#frmLogin div{
+	font-family: "微软雅黑";
+	font-weight: bold;
+}
+
+/*设置动态生成验证码标签的样式*/
+#frmLogin #codeE{
+	font-size: 20px;
+	border: 1px dashed #999999;
+	display: inline-block;
+	padding: 5px;
+}

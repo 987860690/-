@@ -1,0 +1,108 @@
+@charset "utf-8";
+.list-group-item a {
+	/*设置文本不还行*/
+	white-space: nowrap;
+	/*s设置文本只能在半角空格或连字符处换行*/
+	word-break: keep-all;
+	overflow: hidden;
+	/*显示省略符号代表被休假过的文本*/
+	text-overflow: ellipsis;
+	display: block;
+	font: "微软雅黑" 15px;
+}
+
+
+/*美化字幕说明排版*/
+
+.carousel-caption {
+	background-color: #000000;
+	color: #fff;
+	opacity: .7;
+	filter: alpha(opacity=70);
+	font: "微软雅黑" 12px;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	padding: 0 5px;
+	text-align: center;
+}
+
+
+/*设置的用户注册左边文字容器的样式*/
+
+.userRegisterText {
+	display: inline-block;
+	width: 20%;
+	text-align: right;
+	padding-right: 5px;
+	font: bold 15px "微软雅黑";
+	/*设置容器垂直对其方式为顶端对其*/
+	vertical-align: top;
+}
+
+
+/*设置用户注册右边输入框的样式*/
+
+.userRegisterInput {
+	display: inline-block;
+	width: 70%;
+}
+
+
+/*设置用户注册右边输入提示文字容器的样式*/
+
+.userRegisterNotice {
+	font: "微软雅黑" 15px;
+	color: #444444;
+	padding: 8px 0;
+}
+
+.media {
+	height: 200px
+}
+
+.pull-left {
+	width: 40%;
+}
+
+.media p {
+	line-height: 24px;
+}
+
+.img-thumbnail{
+	-webkit-transition: all 2s ease;
+	-moz-transition: all 2s ease;
+	-ms-transition: all 2s ease;
+	-o-transition: all 2s ease;
+	transition: all 2s ease;
+}
+.img-thumbnail:hover{
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+
+/*设置鼠标划过图片时候的抖动效果*/
+#divChannelLink .col-md-4 img{
+	margin: 0 auto;
+	transform:  translateY(0rem);
+	transition: all 2.5s ease;
+}
+#divChannelLink .col-md-4:hover img{
+	transform: translateY(-1rem);
+}
+
+
+.container_footer{
+	height: 160px;
+	background-image: url(../img/bg.PNG);
+	background-size: 100%;
+}
+
+.container_footer_txt{
+	padding-top: 40px;
+	color: #FFFFFF;
+	font-weight: bold;
+}

@@ -1,0 +1,23 @@
+@charset "utf-8";
+#divTop{
+	position: relative;
+	height: 80px;
+	background: url(../img/bg.PNG);
+}
+#divTop #divTopMenu{
+	position: absolute;
+	left: 350px;
+	top: 10px;
+}
+/*#divTopMenu ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#divTopMenu li,#divTopMenu li a{
+	display: inline-block;
+	padding: 8px;
+	font: bold 15px "微软雅黑";
+	color: white;
+	text-decoration: none;
+}*/
